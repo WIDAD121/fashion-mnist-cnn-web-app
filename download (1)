@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Runtime uploads and generated files
+app/uploads/*
+!app/uploads/.gitkeep
+
+# Model/data artifacts
+*.h5
+*.keras
+*.pb
+*.csv
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
