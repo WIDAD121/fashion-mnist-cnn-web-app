@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="imageHome">
+</div>
+<ol style="--length: 5" role="list" class="cont2">
+	<li style="--i: 1" class="intr">
+		<h3>INTRODUCTION</h3>
+		<p>Les réseaux neuronaux convolutifs (CNN) sont des modèles d'apprentissage profond utilisés pour reconnaître des motifs dans les données visuelles. Flask est un framework web minimaliste pour Python, idéal pour créer des applications web légères et flexibles.</p>
+	</li>
+	<li style="--i: 2" class="obj">
+		<h3>OBJECTIF</h3>
+		<p> Utiliser des couches convolutionnelles pour extraire des caractéristiques pertinentes des images, permettant ainsi une classification précise dans des tâches telles que la reconnaissance d'objets.</p>
+	</li>
+</ol>
+<style>
+    .imageHome {
+        background-image: url("{{ url_for('static', filename='cnnallsteps (1).png') }}");
+        width: 75%;
+        left:23%;
+        z-index: 1;
+        height: 351px;
+        MARGIN-LEFT: 25%;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        color: rgb(190, 179, 179);
+
+    }
+
+p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+ol {
+    list-style: none;
+    counter-reset: list;
+    padding: 0 1rem;
+    display: flex;
+    padding: 0%;
+    margin-bottom: 0;
+}
+
+.cont2 li {
+    --stop: calc(100% / var(--length) * var(--i));
+    --l: 62%;
+    --l2: 88%;
+    --h: calc((var(--i) - 1) * (180 / var(--length)));
+    --c1: hsl(var(--h), 71%, var(--l));
+    --c2: hsl(var(--h), 71%, var(--l2));
+    
+    position: relative;
+    counter-increment: list;
+    max-width: 45rem;
+    margin: 1rem auto;
+    width: 470px;
+    height: 220px;
+    padding: 2rem 1rem 1rem;
+    box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: white;
+}
+.cont2 .intr{
+    margin-right: 0%;
+    margin-left: 27%;
+    width: 450px;
+    margin-bottom: 0;
+}
+.cont2 .obj{
+    margin-right: 2%;
+    width: 450px;
+    margin-bottom: 0;
+
+}
+.cont2 li::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #312450 var(--stop), #31245070 var(--stop));
+}
+
+h3 {
+    display: flex;
+    align-items: baseline;
+    margin: 0 0 1rem;
+    color: rgb(70 70 70);
+}
+
+h3::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    content: counter(list);
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: #312450;
+    color: white;
+}
+
+@media (min-width: 40em) {
+    .cont2 li {
+        margin: 3rem auto;
+        padding: 3rem 2rem 2rem;
+    }
+    
+    h3 {
+        font-size: 2.25rem;
+        margin: 0 0 2rem;
+    }
+    
+    h3::before {
+        margin-right: 1.5rem;
+    }
+}
+</style>
+{% endblock %}
